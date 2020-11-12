@@ -1,6 +1,10 @@
 # WordProof API
 
-The API mixed possible to connect with WordProof from almost every platform. Before connecting with the API, please make an account on my.wordproof.com. After signing up you will receive a token which can use to authenticate on protected endpoints.
+The API makes it possible to connect with WordProof from almost every platform.
+
+::: tip
+Before connecting with the API, please make an account on my.wordproof.com. After signing up you will receive a token which can use to authenticate on protected endpoints.
+:::
 
 ## Headers
 

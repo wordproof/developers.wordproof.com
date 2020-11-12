@@ -10,4 +10,4 @@ WordPress plug-in is open source and accessible in the public [WordPress plugin 
 
 ## Shopify
 
-We are actively working on a Shopify extension. Interested, please mail [Jelle](mailto:jelle@wordproof.com)
+We are actively working on a Shopify extension. Interested, please mail [Jelle](mailto:jelle@wordproof.com) if you have inquiries.
