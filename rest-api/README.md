@@ -79,14 +79,14 @@ Status: 201
 
 ## Callback
 
-By default, WordProof tries to send a callback to the url defined in your account. The callback contains a header called `Signature`  which the receiving app can use to check the payload hasn't been tampered with. Example how to calculate the signature:
-                                                                                   
+By default, WordProof tries to send a callback to the url defined in your account. The callback contains a header called `Signature`  which the receiving app can use to check the payload hasn't been tampered with. The secret is the sha256 hashed bearer token. Example how to calculate the signature:
+ 
 ```php
 $computedSignature = hash_hmac('sha256', $body, $hashedToken);
 ```          
                                                                          
 ```javascript
-let computedSignature = CryptoJS.HmacSHA256($body, $hashedToken);
+let computedSignature = CryptoJS.HmacSHA256($body, hashedToken);
 ```
 
 The `computedSignature` should match the signature in the header of the request.
