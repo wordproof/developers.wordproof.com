@@ -45,21 +45,21 @@ Status: 201
 {
   "id": "2050",
   "hash": "7741ff80bc005e298bc52bd0510677ef9d34a80292cb98b58d927e4fc70b430c",
-  "hash_input": "{test}"
+  "hash_input": "{"@context":"https://schema.org","@type":"HashInput", ...}"
 }
 ```
 
 ### GET Timestamp
 
 ```bash
-GET /timestamps/{uid}
+GET /timestamps/{id}
 ```
 
 #### Parameters
 
 |   Name   |  Type  | Description |      Required      |
 | :------: | :----: | :---------: | :----------------: |
-|uid|integer|unique id|:heavy_check_mark:|
+|id|integer|unique id|:heavy_check_mark:|
 
 #### Response
 
@@ -70,13 +70,23 @@ Status: 201
   "id": "2050",
   "hash": "7741ff80bc005e298bc52bd0510677ef9d34a80292cb98b58d927e4fc70b430c"
   "transaction": {
-    "blockchain": "eosio_main",
-    "transactionId": "tnhdjsz",
-    "link": "https://bloks.io/tx/tnhdjsz",
+    "blockchain": "eos",
+    "transactionId": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+    "link": "https://bloks.io/tx/9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
   }
 }
 ```
 
 ## Callback
 
-By default, WordProof tries to send a callback to the url defined in your account. This callback contains a secret, which is the hashed version of your token. Please verify this by hashing your own token (sha256) before saving any of the fields.
+By default, WordProof tries to send a callback to the url defined in your account. The callback contains a header called `Signature`  which the receiving app can use to check the payload hasn't been tampered with. Example how to calculate the signature:
+                                                                                   
+```php
+$computedSignature = hash_hmac('sha256', $body, $hashedToken);
+```          
+                                                                         
+```javascript
+let computedSignature = CryptoJS.HmacSHA256($body, $hashedToken);
+```
+
+The `computedSignature` should match the signature in the header of the request.
