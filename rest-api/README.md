@@ -33,9 +33,9 @@ POST /timestamps
 |uid|integer|unique id|:heavy_check_mark:|
 |hash_input|integer|HashInput of item|:heavy_minus_sign:|
 |date_modified|iso-8601|date last modified|:heavy_check_mark:|
-|title|integer|title of item|:heavy_check_mark:, if no hash_input|
+|title|integer|title of item|:heavy_check_mark:|
+|url|integer|public url pointing to item|:heavy_check_mark:|
 |content|integer|content of item|:heavy_check_mark:, if no hash_input|
-|url|integer|public url pointing to item|:heavy_check_mark:, if no hash_input|
 
 #### Response
 
@@ -79,7 +79,7 @@ Status: 201
 
 ## Callback
 
-By default, WordProof tries to send a callback to the url defined in your account. The callback contains a header called `Signature`  which the receiving app can use to check the payload hasn't been tampered with. The secret is the sha256 hashed bearer token. Example how to calculate the signature:
+By default, WordProof tries to send a callback to the url defined in your account. The POST request contains a header called `Signature`  which the receiving app can use to check the payload hasn't been tampered with. The secret is the sha256 hashed bearer token. Example how to calculate the signature:
  
 ```php
 $computedSignature = hash_hmac('sha256', $body, $hashedToken);
@@ -90,3 +90,14 @@ let computedSignature = CryptoJS.HmacSHA256($body, hashedToken);
 ```
 
 The `computedSignature` should match the signature in the header of the request.
+
+When the url to which we're sending the webhook fails to send a response with a 2xx status code, we consider the call as failed. The call will also be considered failed if the server doesn't respond within 5 seconds. After the third try, no more callbacks will be sent for the particular timestamp.
+
+
+
+## Errors
+
+WordProof uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the 2xx range indicate success. Codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted). Codes in the 5xx range indicate an error with our servers.
+
+Most errors will also include a human-readable `message`.
+
