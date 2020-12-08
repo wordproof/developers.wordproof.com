@@ -25,11 +25,10 @@ The JSON-LD listed below [is proposed](https://github.com/schemaorg/schemaorg/is
   }
 }
 ```
-*timestamp.identifier:* The transaction ID.
 
-*timestamp.hashLink:* Links to a page returning the InputHash.
+Please make sure you return an endpoint in the `hashLink` parameter which in turn return the HashInput object. You could use the hash as a unique identifier for different revisions or articles. The identifier refers to the unique identifier of the blockchain transaction (transaction id).
 
-## InputHash
+## HashInput
 
 ```json
 {
