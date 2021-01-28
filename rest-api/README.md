@@ -2,8 +2,8 @@
 
 The API makes it possible to connect with WordProof from almost every platform.
 
-::: tip Before connecting with the API, please make an account on my.wordproof.com. After signing up you will receive a
-token which can use to authenticate on protected endpoints.
+::: tip 
+Before connecting with the API, please make an account on my.wordproof.com. After signing up you will receive a token which can use to authenticate on protected endpoints.
 :::
 
 ## Headers
@@ -18,6 +18,11 @@ Always send the following headers with your requests to WordProof.
 }
 ```
 
+### Rate limit
+
+Each route returns a `x-ratelimit-remaining` variable. Most routes allow 60 requests per minute.
+The `POST /timestamps/bulk` routes allows 600 requests per minute.
+
 ## Endpoints
 
 ### POST Timestamp
@@ -26,8 +31,8 @@ Always send the following headers with your requests to WordProof.
 POST /timestamps
 ```
 
-::: tip The rate limit to all routes is set 60 per minute. When timestamping a large amount of items, please use
-the `/timestamp/bulk` route.
+::: tip 
+Use the `/timestamp/bulk` route for timestamping large quantities of items.
 :::
 
 #### Parameters
@@ -60,7 +65,8 @@ POST /timestamps/bulk
 ```
 
 The required parameters and responses are identical to the `POST /timestamps`, but the **rate limit is set to 600 per
-minute**. The items sent using this endpoint are put on a low priority queue and will be slower to respond with a webhook.
+minute**. The items sent using this endpoint are put on a low priority queue and will be slower to respond with a
+webhook.
 
 ### GET Timestamp
 
