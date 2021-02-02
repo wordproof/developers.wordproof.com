@@ -16,17 +16,17 @@ The JSON-LD listed below [is proposed](https://github.com/schemaorg/schemaorg/is
     "@type":"BlockchainTransaction",
     "identifier":"0fce9c929ef03838775703d4cf55b7b1bdd6a5cc3503a2606dbe3b6c0cf0a802",
     "hash":"8A258E516081C36B866812E49495628CBDC1DD4126DB321A28AE95EE55B83BAB",
-    "hashLink":"https://example.com/json/?hl=8A258E516081C36B866812E49495628CBDC1DD4126DB321A28AE95EE55B83BAB",
+    "hashLink":"https://example.com/json/?hash=8A258E516081C36B866812E49495628CBDC1DD4126DB321A28AE95EE55B83BAB",
     "recordedIn":
     {
       "@type":"Blockchain",
-      "name":"eos"
+      "name":"eosio_main"
     }
   }
 }
 ```
 
-Please make sure you return an endpoint in the `hashLink` parameter which in turn return the HashInput object. You could use the hash as a unique identifier for different revisions or articles. The identifier refers to the unique identifier of the blockchain transaction (transaction id).
+Please make sure you return an endpoint in the `hashLink` parameter which in turn return the HashInput object. You could use the hash as a unique identifier for different revisions or articles.
 
 ## HashInput
 
