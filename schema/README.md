@@ -34,10 +34,8 @@ Please make sure you return an endpoint in the `hashLink` parameter which in tur
 {
   "@context":"https://schema.org",
   "@type":"HashInput",
-  "@id":"https://example.com/json/?hl=8A258E516081C36B866812E49495628CBDC1DD4126DB321A28AE95EE55B83BAB",
   "dateCreated":"2020-09-27T20:28:41+01:00",
   "isBasedOn":"https://example.com/time-stamped-article/",
-  "encodingFormat":"text/html",
   "text":"<h1>Nunc eget lorem dolor sed</h1>\t\t\n\t\t\t<h2>Suspendisse sed nisi lacus sed viverra tellus.</h2>\t\t\n\t\t\t<p>Non consectetur a erat nam at lectus urna. Ut porttitor leo a diam sollicitudin tempor id eu.</p>..."
 }
 ```
