@@ -39,12 +39,12 @@ Use the `/timestamp/bulk` route for timestamping large quantities of items.
 
 |   Name   |  Type  | Description |      Required      |
 | :------: | :----: | :---------: | :----------------: |
-|uid|integer|unique id|:heavy_check_mark:|
-|hash_input|integer|HashInput of item|:heavy_minus_sign:|
-|date_modified|iso-8601|date last modified|:heavy_check_mark:|
-|title|integer|title of item|:heavy_check_mark:|
-|url|integer|public url pointing to item|:heavy_check_mark:|
-|content|integer|content of item|:heavy_check_mark:, if no hash_input|
+|uid|integer|unique id of resource on your system|:heavy_check_mark:|
+|date_modified|string|date last modified|:heavy_check_mark:|
+|title|string|title of item|:heavy_check_mark:|
+|url|string|public url pointing to item|:heavy_check_mark:|
+|content|string|content of item|:heavy_check_mark:, if no hash_input|
+|hash_input|string|HashInput of item|:heavy_check_mark:, if no content|
 
 #### Response
 
@@ -86,21 +86,21 @@ GET /timestamps/{id}
 Status: 201
 
 {
-"id": "2050",
-"hash": "7741ff80bc005e298bc52bd0510677ef9d34a80292cb98b58d927e4fc70b430c"
-"transaction": {
-"blockchain": "eosio_main",
-"transactionId": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
-"link": "https://bloks.io/tx/9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
-}
+    "id": 2050,
+    "hash": "7741ff80bc005e298bc52bd0510677ef9d34a80292cb98b58d927e4fc70b430c",
+    "transaction": {
+        "blockchain": "eosio_main",
+        "transactionId": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+        "link": "https://bloks.io/tx/9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+    }
 }
 ```
 
 ## Webhook
 
-By default, WordProof tries to send a webhook to the url defined in your account. The POST request contains a header
+By default, WordProof tries to send a webhook to the `webhook_url` defined in your account. The POST request contains a header
 called `Signature`  which the receiving app can use to check the payload hasn't been tampered with. The secret is the
-sha256 hashed bearer token. Example how to calculate the signature:
+sha256 hashed bearer token. Examples how to calculate the signature:
 
 ```php
 $computedSignature = hash_hmac('sha256', $body, $hashedToken);
@@ -111,6 +111,20 @@ let computedSignature = CryptoJS.HmacSHA256($body, hashedToken);
 ```
 
 The `computedSignature` should match the signature in the header of the request.
+
+The body contains the following data:
+
+```json
+{
+    "id": 2050,
+    "uid": 1,
+    "transaction": {
+        "blockchain": "eosio_main",
+        "transactionId": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+        "link": "https://bloks.io/tx/9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+    }
+}
+```
 
 When the url to which we're sending the webhook fails to send a response with a 2xx status code, we consider the call as
 failed. The call will also be considered failed if the server doesn't respond within 5 seconds. After the third try, no
