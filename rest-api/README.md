@@ -14,7 +14,7 @@ Always send the following headers with your requests to WordProof.
 {
   "Accept": "application/json",
   "Content-Type": "application/json",
-  "Authentication": "Bearer {token}"
+  "Authorization": "Bearer {token}"
 }
 ```
 
