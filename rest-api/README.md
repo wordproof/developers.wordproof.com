@@ -40,7 +40,7 @@ Use the `/timestamp/bulk` route for timestamping large quantities of items.
 |   Name   |  Type  | Description |      Required      |
 | :------: | :----: | :---------: | :----------------: |
 |uid|integer|unique id of resource on your system|:heavy_check_mark:|
-|date_modified|string|date last modified|:heavy_check_mark:|
+|date_modified|string|an ISO-8601 representation of the datetime last modified|:heavy_check_mark:|
 |title|string|title of item|:heavy_check_mark:, if no meta_title|
 |meta_title|string|title of item|:heavy_check_mark:, if no title|
 |url|string|public url pointing to item|:heavy_check_mark:|
