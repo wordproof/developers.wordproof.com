@@ -5,7 +5,7 @@ module.exports = {
         sidebar: [
             ['/rest-api/', 'API'],
             ['/schema/', 'Schema'],
-            ['/plugins/', 'Plugins'],
+            ['/plug-and-play/', 'Plug and Play'],
         ],
         nav: [
 
