@@ -1,6 +1,7 @@
 # Schema Output
 
-::: tip NOTICE The JSON-LD listed below [is proposed](https://github.com/schemaorg/schemaorg/issues/2756) to be merged
+::: tip NOTICE 
+The JSON-LD listed below [is proposed](https://github.com/schemaorg/schemaorg/issues/2756) to be merged
 with Schema.org and is subject to change.
 :::
 
@@ -46,6 +47,10 @@ the attribute in the HTML tag. Other options for `w-certificate` can be found on
 the [dedicated documentation page](https://uikit.wordproof.com/pages/w-certificate.html).
 
 As we use web components, no frontend framework is required, and the size of the requested scripts is small.
+
+::: warning NOTICE
+Fonts are not loaded properly currently. This will be fixed in a future update. 
+:::
 
 ```html
 
