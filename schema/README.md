@@ -40,6 +40,8 @@ use the hash as a unique identifier for different revisions or articles.
 }
 ```
 
+If you want to use the HashInput to create a hash yourself, make sure to hash the minified, UTF-8 encoded string representation of the JSON object.
+
 ## Display a certificate
 
 With the Schema in place, you can use the certificate from our UIKit. The language will be determined by the `lang`

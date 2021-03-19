@@ -47,6 +47,8 @@ Use the `/timestamp/bulk` route for timestamping large quantities of items.
 |content|string|content of item|:heavy_check_mark:, if no hash_input|
 |hash_input|string|HashInput of item|:heavy_check_mark:, if no content|
 
+The `title` parameter is a helper that is added to content ('{title}\n\n'). 
+
 #### Response
 
 ```json
