@@ -58,8 +58,8 @@ Fonts are not loaded properly currently. This will be fixed in a future update.
 
 <html lang="en">
 <head>
-    <script type="module" src="https://unpkg.com/@wordproof/uikit/dist/uikit/uikit.esm.js"></script>
-    <script nomodule src="https://unpkg.com/@wordproof/uikit/dist/uikit/uikit.js"></script>
+    <script defer type="module" src="https://unpkg.com/@wordproof/uikit/dist/uikit/uikit.esm.js"></script>
+    <script defer nomodule src="https://unpkg.com/@wordproof/uikit/dist/uikit/uikit.js"></script>
 
     <script type="application/ld+json">{"@context": "http://schema.org", ..., "timestamp": { ... }}</script>
 </head>
