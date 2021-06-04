@@ -121,8 +121,11 @@ The body contains the following data:
 {
     "id": 2050,
     "uid": 1,
+    "hash": "7741ff80bc005e298bc52bd0510677ef9d34a80292cb98b58d927e4fc70b430c",
+    "schema": "{ ... }",
     "transaction": {
         "blockchain": "eosio_main",
+        "address": "itswordproof",
         "transactionId": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
         "link": "https://bloks.io/tx/9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
     }
