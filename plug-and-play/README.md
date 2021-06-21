@@ -1,8 +1,8 @@
 # Plug and Play
 
-WordProof comes with a multiple ways to connect. Currently, these options include:
+WordProof comes with a multiple plug-and-play apps and api's. Currently, these options include:
 
-* [WordPress plug-in](#wordpress)
+* [WordPress plugin](#wordpress)
 * [Rest API](/rest-api)
 * [Drupal module](#drupal)
 
@@ -19,7 +19,7 @@ SDK.
 
 ## Drupal
 
-The Drupal module [is released by SWIS](https://www.swis.nl/wordproof-for-drupal-released) and [available for download](https://www.drupal.org/project/wordproof). The Drupal module is the first open source WordProof product built by an external  
+The Drupal module [is released by SWIS](https://www.swis.nl/wordproof-for-drupal-released) and [available for download](https://www.drupal.org/project/wordproof). The Drupal module is the first open source WordProof product built by an external organisation.  
 
 ## Shopify
 
