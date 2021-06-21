@@ -4,11 +4,11 @@ WordProof comes with a multiple ways to connect. Currently, these options includ
 
 * [WordPress plug-in](#wordpress)
 * [Rest API](/rest-api)
+* [Drupal module](#drupal)
 
 Under construction:
 
 * [Shopify app](#shopify)
-* Drupal extention
 * [WordPress SDK](#wordpress)
 
 ## WordPress
@@ -16,6 +16,10 @@ Under construction:
 WordPress plug-in is open source and accessible in the
 public [WordPress plugin repository](https://wordpress.org/plugins/wordproof-timestamp/). Do you want to include WordProof natively into your own plugin? Please get in touch to discuss how to implement our WordPress
 SDK.
+
+## Drupal
+
+The Drupal module [is released by SWIS](https://www.swis.nl/wordproof-for-drupal-released) and [available for download](https://www.drupal.org/project/wordproof). The Drupal module is the first open source WordProof product built by an external  
 
 ## Shopify
 
